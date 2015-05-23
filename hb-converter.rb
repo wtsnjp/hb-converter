@@ -2,7 +2,7 @@
 
 
 ### バージョン表示
-VERSION = "1.0"
+VERSION = "1.0.1"
 puts "Version #{VERSION}"
 
 

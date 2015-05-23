@@ -1,4 +1,5 @@
 # ad_nolink.rb
+# produced by Takuto Asakura
 
 
 in_source, in_tex = false, false
@@ -40,7 +41,13 @@ file = File.open($outputfile, "r")
 				'[]``[]'
 			end
 			# リンク構文
-			line.gsub!(/[^!]\[.+?\]\(.+?\)/){|str| str.slice!(0,1) + '[]' + str + '[]'}
+			line.gsub!(/\[.+?\]\(.+?\)/){|str|
+				if /!$/ === $`
+					str
+				else
+					'[]' + str + '[]'
+				end
+			}
 			# 引用構文
 			line.gsub!(/^>\s/, '[]> []')
 			# 脚注構文

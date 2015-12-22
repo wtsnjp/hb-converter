@@ -1,5 +1,4 @@
 # ad_nolink.rb
-# produced by Takuto Asakura
 
 
 in_source, in_tex = false, false
